@@ -17,17 +17,18 @@
 , xorg
 , ibus
 , switchboard
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "switchboard-plug-keyboard";
-  version = "2.4.1";
+  version = "2020-12-23";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-iuv5NZ7v+rXyFsKB/PvGa/7hm9MIV8E6JnTzEGROlhM=";
+    rev = "26b024404d8fbaa6917cf832901293e4bc8b3970";
+    sha256 = "1c95bkw0q1h3k2gi925m05x6gq22yrl38hn9plhg1zzmjjw42002";
   };
 
   patches = [
@@ -55,6 +56,7 @@ stdenv.mkDerivation rec {
     libgee
     libgnomekbd
     libxklavier
+    libhandy
     switchboard
   ];
 

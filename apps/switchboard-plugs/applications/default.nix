@@ -10,17 +10,18 @@
 , granite
 , gtk3
 , switchboard
+, flatpak
 }:
 
 stdenv.mkDerivation rec {
   pname = "switchboard-plug-applications";
-  version = "2.1.7";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-uiu19XyogNR0LX/2IIZM6B1JKAfqDMOHniQ29EAa9XM=";
+    rev = "77ef00e0f5a0e4402f4e3aa84c866b34c1d29d0c";
+    sha256 = "1ih5zwzcqglqnjcrl88igjjjizl2xs1dqalbljmw05wsa6klrzsd";
   };
 
   passthru = {
@@ -41,6 +42,7 @@ stdenv.mkDerivation rec {
     gtk3
     libgee
     switchboard
+    flatpak
   ];
 
   meta = with stdenv.lib; {

@@ -19,15 +19,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-calculator";
-  version = "1.5.5";
+  version = "2020-12-27";
 
   repoName = "calculator";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-ctKUtaBU0qvDYquGCPL7tiTwQ7IcqvT7SXRjxETWXbM=";
+    rev = "9f6b2d183cf20903c8745ec5ec980e3904d6de0e";
+    sha256 = "1jrcihsnlrbfzcpchhaf47z5j2lpk0j8p5z63zs75asp2hz2f2pa";
   };
 
   passthru = {

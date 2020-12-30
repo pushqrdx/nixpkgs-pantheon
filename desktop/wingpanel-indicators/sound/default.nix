@@ -9,7 +9,6 @@
 , vala
 , gtk3
 , granite
-, wingpanel
 , libnotify
 , pulseaudio
 , libcanberra-gtk3
@@ -19,13 +18,13 @@
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-sound";
-  version = "2.1.6";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-WGkxLsbdJ7Z7kolymYpggsVy4cN4CicNKdfCbunklSI=";
+    rev = "e7c255a3e23cc490edf61c9e2e80525c0e6804f3";
+    sha256 = "0042sgw60qs0c4c0wdd427sdskq14hiivfchlzpqdxksflhnw0ng";
   };
 
   passthru = {
@@ -50,7 +49,7 @@ stdenv.mkDerivation rec {
     libgee
     libnotify
     pulseaudio
-    wingpanel
+    pantheon.wingpanel
   ];
 
   postPatch = ''

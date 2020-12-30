@@ -43,14 +43,14 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-settings-daemon";
-  version = "3.34.1";
+  version = "2020-02-25";
 
   repoName = "gnome-settings-daemon";
 
   src = fetchgit {
     url = "https://git.launchpad.net/~ubuntu-desktop/ubuntu/+source/${repoName}";
-    rev = "refs/tags/ubuntu/${version}-1ubuntu2";
-    sha256 = "0w0dsbzif7v0gk61rs9g20ldlimbdwb5yvlfdc568yyx5z643jbv";
+    rev = "32e76b21e52ebf79ad86df3042daecb430049e61";
+    sha256 = "1ifrq89pqarx74mkxykvw2kjyljd28i4ggw90l5bk4jjrwfr66f3";
   };
 
   # We've omitted the 53_sync_input_sources_to_accountsservice patch because it breaks the build.

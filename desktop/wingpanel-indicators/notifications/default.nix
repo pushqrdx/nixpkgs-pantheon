@@ -9,30 +9,21 @@
 , vala
 , gtk3
 , granite
-, wingpanel
 , libgee
+, libhandy
 , elementary-notifications
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-notifications";
-  version = "2.1.4";
+  version = "2020-12-21";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-tVPSJO/9IXlibLkb6Cv+8azdvuXbcNOI1qYk4VQc4WI=";
+    rev = "0d639a67dcc6dfe79627cdc23dc1390527e2aafc";
+    sha256 = "05g1lxdsh364hyqmmw53i11ym6j8nx0gq6qb4dlqrpxgc4aiq9ld";
   };
-
-  patches = [
-    # Fix do not disturb on NixOS
-    # https://github.com/elementary/wingpanel-indicator-notifications/pull/110
-    (fetchpatch {
-      url = "https://github.com/elementary/wingpanel-indicator-notifications/commit/02b1e226c0262c1535fdf2b4f1daba6be9084f67.patch";
-      sha256 = "1a5phygygndr28yx8yp0lyk0wxypc5656dpidw1z8x1yd6xysqhy";
-    })
-  ];
 
   passthru = {
     updateScript = nix-update-script {
@@ -52,7 +43,8 @@ stdenv.mkDerivation rec {
     granite
     gtk3
     libgee
-    wingpanel
+    libhandy
+    pantheon.wingpanel
   ];
 
   meta = with stdenv.lib; {

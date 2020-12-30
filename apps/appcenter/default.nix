@@ -25,19 +25,19 @@
 , python3
 , vala
 , polkit
-, libhandy_0
+, libhandy
 , wrapGAppsHook
 }:
 
 stdenv.mkDerivation rec {
   pname = "appcenter";
-  version = "3.5.1";
+  version = "2020-12-25";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-8r0DlmG8xlCQ1uFHZQjXG2ls4VBrsRzrVY8Ey3/OYAU=";
+    rev = "a7ad89fd0efaa901ae58688bd2b3051f9384ec26";
+    sha256 = "0yc7fwm9fmazhcrydn8ra5dbqmj3w0dar7ayzqvjdwmpj1abrkiz";
   };
 
   passthru = {
@@ -69,7 +69,7 @@ stdenv.mkDerivation rec {
     gtk3
     json-glib
     libgee
-    libhandy_0 # doesn't support libhandy-1 yet
+    libhandy
     libsoup
     libxml2
     packagekit

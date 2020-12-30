@@ -13,15 +13,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-dpms-helper";
-  version = "1.0";
+  version = "2018-05-18";
 
   repoName = "dpms-helper";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-0KbfAxvZ+aFjq+XEK4uoRHSyKlaky0FlJd2a5TG4bms=";
+    rev = "e2547fdb3cfb695cd0e34511c43e3750602d5d0b";
+    sha256 = "0svfp0qyb6nx4mjl3jx4aqmb4x24m25jpi75mdis3yfr3c1xz9nh";
   };
 
   passthru = {

@@ -11,20 +11,20 @@
 , glib
 , granite
 , libnotify
-, wingpanel
 , libgee
 , libxml2
+, wingpanel
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-bluetooth";
-  version = "unstable-2020-10-01";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = "2b59d646ea0d66ae45dafc851374f24dcd98c064";
-    sha256 = "sha256-selp70P+7RhbdHF6iiNmcNbMf/c+B9zZ6nlxwRSZGn4=";
+    rev = "a0b4a61f2d44939945fae6465cd93e4f6927bc06";
+    sha256 = "06hcz9i9m1frm2wvnqbvylpgqiymbg07g73kgcxbfss00q5qflmd";
   };
 
   passthru = {

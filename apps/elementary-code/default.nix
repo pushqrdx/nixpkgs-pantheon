@@ -15,7 +15,7 @@
 , appstream
 , libpeas
 , editorconfig-core-c
-, gtksourceview3
+, gtksourceview4
 , gtkspell3
 , libsoup
 , vte
@@ -24,19 +24,20 @@
 , ctags
 , libgit2-glib
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-code";
-  version = "3.4.1";
+  version = "2020-12-25";
 
   repoName = "code";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-4AEayj+K/lOW6jEYmvmdan1kTqqqLL1YzwcU7/3PH5U=";
+    rev = "16bbb194de9085c07135f1f455b0f650ebb4009f";
+    sha256 = "0bylsj7sivfvicppy9gj9x8gmqy6xksx7194rcsgamsl0w2qmqmr";
   };
 
   passthru = {
@@ -62,7 +63,7 @@ stdenv.mkDerivation rec {
     elementary-icon-theme
     granite
     gtk3
-    gtksourceview3
+    gtksourceview4
     gtkspell3
     libgee
     libgit2-glib
@@ -71,6 +72,7 @@ stdenv.mkDerivation rec {
     vte
     webkitgtk
     zeitgeist
+    libhandy
   ];
 
   # install script fails with UnicodeDecodeError because of printing a fancy elipsis character

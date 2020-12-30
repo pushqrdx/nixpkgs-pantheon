@@ -9,15 +9,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-sound-theme";
-  version = "1.0";
+  version = "2018-05-21";
 
   repoName = "sound-theme";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-v8ludbPCJaMHCxuzjZchTJwpGiF6UJlVMIMFg+lAhbU=";
+    rev = "5519eaffa7cd018a00e9b1e3a7da1c6e13fbd53b";
+    sha256 = "1dc583lq61c361arjl3s44d2k72c46bqvcqv1c3s69f2ndsnxjdz";
   };
 
   nativeBuildInputs = [

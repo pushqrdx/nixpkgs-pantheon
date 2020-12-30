@@ -8,20 +8,20 @@
 , vala
 , gtk3
 , granite
-, wingpanel
 , libgee
 , libxml2
+, wingpanel
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-nightlight";
-  version = "2.0.4";
+  version = "2020-12-21";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-0f03XO74ezzS/Uy0mXT4raoazETL/SOVh58sAo9bEIA=";
+    rev = "6a0b8be392ff5f246d080b5d237c78ce2ddd92a5";
+    sha256 = "0rjghzkiniswgczmgxksx6pdq93g63asf1ql3wqgw4wcmnbrpmp7";
   };
 
   passthru = {

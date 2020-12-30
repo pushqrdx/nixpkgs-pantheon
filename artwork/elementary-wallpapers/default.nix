@@ -9,15 +9,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-wallpapers";
-  version = "5.5.0";
+  version = "2020-10-26";
 
   repoName = "wallpapers";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-Q5sYDXqFhiTu8nABmyND3L8bIXd1BJ3GZQ9TL3SzwzA=";
+    rev = "7656a8cf14326bbe29a7b6cd206514093bedbaba";
+    sha256 = "0mjz6nycw2x2zz9wabnsnp7aip1pakc82f3w6hla0fhxqw9qgxqg";
   };
 
   nativeBuildInputs = [

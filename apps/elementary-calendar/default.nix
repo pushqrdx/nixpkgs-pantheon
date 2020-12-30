@@ -22,19 +22,20 @@
 , appstream-glib
 , elementary-icon-theme
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-calendar";
-  version = "5.1.1";
+  version = "2020-12-25";
 
   repoName = "calendar";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "18npf4zzf2dywr1zkr6fqzcbb70297yvdp5wxw7zyam1xwa86v07";
+    rev = "6001fe5b7e8b600f5401f35fac0309941d7bc76b";
+    sha256 = "0lzxavqc8i05xypn547mvrss6fh445qa3qp8p6sfn1bfyqp667yv";
   };
 
   passthru = {
@@ -67,6 +68,7 @@ stdenv.mkDerivation rec {
     libgee
     libical
     libnotify
+    libhandy
   ];
 
   postPatch = ''

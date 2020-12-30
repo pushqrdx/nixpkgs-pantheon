@@ -14,19 +14,20 @@
 , libgee
 , elementary-icon-theme
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-shortcut-overlay";
-  version = "1.1.2";
+  version = "2020-12-19";
 
   repoName = "shortcut-overlay";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-TFS29vwDkTtoFcIVAbKskyLemqW9fxE7fQkM61DpDm0=";
+    rev = "34e56468664062ecc1fff15680d5a17b00c4d9c1";
+    sha256 = "1csx874jx96z26vbq9lnsmd6rnjxjylmjf52gn4amqynn8vaw53n";
   };
 
   passthru = {
@@ -51,6 +52,7 @@ stdenv.mkDerivation rec {
     granite
     gtk3
     libgee
+    libhandy
   ];
 
   meta = with stdenv.lib; {

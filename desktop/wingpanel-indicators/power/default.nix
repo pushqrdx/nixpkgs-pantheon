@@ -12,19 +12,18 @@
 , bamf
 , libgtop
 , udev
-, wingpanel
 , libgee
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-power";
-  version = "2.2.0";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-wjYZXFnzvPSukzh1BNvyaFxKpYm+kNNFm5AsthLXGVE=";
+    rev = "25ec92a211d32721f841e5a701dc1bada722c73d";
+    sha256 = "1hsbcfjknc81saccvl84v7hjwmwqmswjwdkhnzpixhmc85r1h85l";
   };
 
   passthru = {
@@ -48,7 +47,7 @@ stdenv.mkDerivation rec {
     libgee
     libgtop
     udev
-    wingpanel
+    pantheon.wingpanel
   ];
 
   postPatch = ''

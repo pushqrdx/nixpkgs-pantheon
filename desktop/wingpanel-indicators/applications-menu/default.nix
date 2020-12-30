@@ -29,15 +29,15 @@
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-applications-menu";
-  version = "2.7.1";
+  version = "2020-12-19";
 
   repoName = "applications-menu";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-NeazBzkbdQTC6OzPxxyED4OstMkNkUGtCIaZD67fTnM=";
+    rev = "59b3b6dc94d35a6dae1e453d58996fdf9ace9334";
+    sha256 = "1jm34njiidpwv09fprlq4zwpvp3bdbcn1hrfvzxxzcm5qq0sh7hm";
   };
 
   passthru = {
@@ -68,7 +68,7 @@ stdenv.mkDerivation rec {
     libsoup
     libunity
     switchboard-with-plugs
-    wingpanel
+    pantheon.wingpanel
     zeitgeist
   ] ++
   # applications-menu has a plugin to search switchboard plugins
@@ -80,19 +80,6 @@ stdenv.mkDerivation rec {
 
   mesonFlags = [
     "--sysconfdir=${placeholder "out"}/etc"
-  ];
-
-  patches = [
-    # Port to Libhandy-1
-    (fetchpatch {
-      url = "https://github.com/elementary/applications-menu/commit/8eb2430e8513e9d37f875c5c9b8b15a968c27127.patch";
-      sha256 = "8Uw9mUw7U5nrAwUDGVpAwoRqb9ah503wQCr9kPbBJIo=";
-    })
-
-    (substituteAll {
-      src = ./fix-paths.patch;
-      bc = "${bc}/bin/bc";
-    })
   ];
 
   postPatch = ''

@@ -12,17 +12,18 @@
 , switchboard
 , elementary-settings-daemon
 , glib
+, libxml2
 }:
 
 stdenv.mkDerivation rec {
   pname = "switchboard-plug-mouse-touchpad";
-  version = "2.4.2";
+  version = "2020-12-24";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-WJ/GRhZsSwC31HEIjHHWBy9/Skqbwor0tNVTedue3kk=";
+    rev = "dd64be8c03ed3c3167557530077568aed776a6c1";
+    sha256 = "0m0imz3s43kk6m8vsxgrc294iwy7dkqlng421rjn6rhdf4v8848z";
   };
 
   passthru = {
@@ -45,6 +46,7 @@ stdenv.mkDerivation rec {
     libgee
     elementary-settings-daemon
     switchboard
+    libxml2
   ];
 
   meta = with stdenv.lib; {

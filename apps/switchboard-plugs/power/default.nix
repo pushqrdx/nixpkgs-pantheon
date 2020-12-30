@@ -20,13 +20,13 @@
 
 stdenv.mkDerivation rec {
   pname = "switchboard-plug-power";
-  version = "2.4.2";
+  version = "2020-12-23";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-swcbkaHHe9BZxMWvjdRutvYfXXrSCUJWuld1btfYeH0=";
+    rev = "7c1eef258709fd3b622950bc10ba480c2f5cbf59";
+    sha256 = "05nla6hskz1qvx6pgi0wz8jk4h89h8ai2icyr2zvgvs5c40qkzsz";
   };
 
   passthru = {
@@ -52,13 +52,6 @@ stdenv.mkDerivation rec {
     libgee
     polkit
     switchboard
-  ];
-
-  patches = [
-    (substituteAll {
-      src = ./dpms-helper-exec.patch;
-      elementary_dpms_helper = elementary-dpms-helper;
-    })
   ];
 
   meta = with stdenv.lib; {

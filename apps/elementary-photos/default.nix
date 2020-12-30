@@ -34,15 +34,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-photos";
-  version = "2.7.0";
+  version = "2020-12-19";
 
   repoName = "photos";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-bTk4shryAWWMrKX3mza6xQ05qpBPf80Ey7fmYgKLUiY=";
+    rev = "fa764c7c9f9e8388dd5bbd63c53486de1ad3fc10";
+    sha256 = "1lnc9r2bs4a7w89v9psv5g1fmms199v9x32lcnxal5s9ci9pz05y";
   };
 
   passthru = {

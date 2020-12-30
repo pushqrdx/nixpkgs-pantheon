@@ -20,15 +20,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-videos";
-  version = "2.7.2";
+  version = "2020-12-19";
 
   repoName = "videos";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-MSyhCXsziQ0MD4lGp9X/9odidjT/L+2Aihwd1qCGvB0=";
+    rev = "50b3f9ad8d745ad1762935359ea21b6ea682435c";
+    sha256 = "1p75rxpwm8rri9hsr3fjbx126xp5nv6gdpffifdppavlh5vm8dcx";
   };
 
   passthru = {

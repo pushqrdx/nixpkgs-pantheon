@@ -9,24 +9,24 @@
 , vala
 , gtk3
 , granite
-, wingpanel
 , evolution-data-server
 , libical
 , libgee
 , libxml2
 , libsoup
+, libhandy
 , elementary-calendar
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-datetime";
-  version = "2.2.5";
+  version = "2020-12-23";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-rZzZIh4bwZfwQFDbfPDKQtfLMJQ2IdykH1yiV6ckqnw=";
+    rev = "56d6b2deb6d9c49e4726eb88eecfc25f8d422bf9";
+    sha256 = "07h5in36iikaz8nnvgw6swnrp66fksb1k4g5vhiz5z6189grx5f2";
   };
 
   passthru = {
@@ -51,7 +51,8 @@ stdenv.mkDerivation rec {
     libgee
     libical
     libsoup
-    wingpanel
+    libhandy
+    pantheon.wingpanel
   ];
 
   postPatch = ''

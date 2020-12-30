@@ -11,15 +11,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-print-shim";
-  version = "0.1.3";
+  version = "2018-07-10";
 
   repoName = "print";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-l2IUu9Mj22lZ5yajPcsGrJcJDakNu4srCV0Qea5ybPA=";
+    rev = "c92021f6b79536cea005d112a53e2bcaeb5ac88e";
+    sha256 = "1l3l77jzqjmpr5p3mpmdi1jiv5364b3awsqn7i6ihn3n28wvdkbh";
   };
 
   passthru = {

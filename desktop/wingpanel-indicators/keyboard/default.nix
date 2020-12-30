@@ -8,23 +8,23 @@
 , substituteAll
 , vala
 , gtk3
-, granite
 , libxml2
-, wingpanel
 , libgee
 , xorg
 , libgnomekbd
+, granite
+, wingpanel
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-keyboard";
-  version = "2.2.1";
+  version = "2020-12-25";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-/sTx0qT7gNj1waQg9OKqHY6MtL+p0NljiIAXKA3DYmA=";
+    rev = "97b8ed7338b360c980049a985b908fa6fdc1a376";
+    sha256 = "0d814kxj08rakwzfyvlb0x5mvpk6ps27rrknbddyi2fjrp1z8fng";
   };
 
   passthru = {

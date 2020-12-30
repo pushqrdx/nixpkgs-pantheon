@@ -18,15 +18,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-capnet-assist";
-  version = "2.2.5";
+  version = "2020-12-19";
 
   repoName = "capnet-assist";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-o6J3vNWvV0zRde8VWWfpb56PQhSck2sJQVLimq0P9CY=";
+    rev = "7b2f6d1b643c6f06306d5541ccc11eafb1de2603";
+    sha256 = "0y8hikmqh3y9rgrmhfza1fr7gm1284595q3gnvhrbddbshym9wx4";
   };
 
   passthru = {

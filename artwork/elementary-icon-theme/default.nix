@@ -13,15 +13,15 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-icon-theme";
-  version = "5.3.1";
+  version = "2020-12-18";
 
   repoName = "icons";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-6XFzjpuHpGIZ+azkPuFcSF7p66sDonwLwjvlNBZDRmc=";
+    rev = "70328ed941d21b5463a919b1f6ae94c71a57376b";
+    sha256 = "0704hdym2kqwx9rh85hfdg34i3ckjr3iqzjkw6aj5x1j4pxvqcsb";
   };
 
   passthru = {

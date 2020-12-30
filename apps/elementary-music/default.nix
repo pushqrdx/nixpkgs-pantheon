@@ -26,19 +26,22 @@
 , libaccounts-glib
 , elementary-icon-theme
 , wrapGAppsHook
+, appstream
+, appstream-glib
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-music";
-  version = "5.0.5";
+  version = "2020-12-19";
 
   repoName = "music";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-3GZoBCu9rF+BnNk9APBzKWO1JYg1XYWwrEvwcjWvYDE=";
+    rev = "212a8d53e575c0b02e5b481aecf6a24923e7714d";
+    sha256 = "1qhai2v9wsnvdmmnrky7gpqipkkzyf4w2fji3qm20bh3czvm4kxg";
   };
 
   passthru = {
@@ -79,6 +82,9 @@ stdenv.mkDerivation rec {
     libsoup
     taglib
     zeitgeist
+    appstream
+    appstream-glib
+    libhandy
   ];
 
   mesonFlags = [

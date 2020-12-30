@@ -5,19 +5,20 @@
 , meson
 , ninja
 , gettext
+, sassc
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-gtk-theme";
-  version = "5.4.2";
+  version = "2020-12-23";
 
   repoName = "stylesheet";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-eE0/LLdnpxOpBvdpioGKV/DOQ5lIuQt9dPnhGkQDGCs=";
+    rev = "9a325a11ff4e74a775c73501621990017021cfd2";
+    sha256 = "0sf94ii3zz65nd536b55pl9fdfp7hf1mf2v24hc54lvaaab7m8al";
   };
 
   passthru = {
@@ -30,6 +31,7 @@ stdenv.mkDerivation rec {
     gettext
     meson
     ninja
+    sassc
   ];
 
   meta = with stdenv.lib; {

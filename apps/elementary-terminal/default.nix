@@ -19,19 +19,20 @@
 , appstream
 , pcre2
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-terminal";
-  version = "5.5.2";
+  version = "2020-12-19";
 
   repoName = "terminal";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-giVmL0zYEVYJ40ZBQ9dDb4hOx4HaYRt7tUTOu37lMYU=";
+    rev = "1bcad8fe20c6ba942825e8f332569bd04fd8553d";
+    sha256 = "1v0fbqszsz78gyyz8hw1rn0krdqf1nrarq5hsmllnjn7i6lsiris";
   };
 
   passthru = {
@@ -60,6 +61,7 @@ stdenv.mkDerivation rec {
     libnotify
     pcre2
     vte
+    libhandy
   ];
 
   # See https://github.com/elementary/terminal/commit/914d4b0e2d0a137f12276d748ae07072b95eff80

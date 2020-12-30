@@ -24,11 +24,12 @@
 , pantheon
 , meson
 , ninja
+, granite
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-dock";
-  version = "unstable-2020-06-11";
+  version = "2020-12-06";
 
   outputs = [ "out" "dev" ];
 
@@ -37,17 +38,9 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = "0a389ee58939d8c91c340df4e5340fc4b23d0b80";
-    sha256 = "01vinik73s0vmk56samgf49zr2bl4wjv44x15sz2cmh744llckja";
+    rev = "456795d510af276ef9a6eb07c549c926e2ed9ccd";
+    sha256 = "1fj80nliym37j2pg0ndff4inak6vjba2zv7bc4m6l02l7dd40pcm";
   };
-
-  patches = [
-    # Fix double includedir path in plank.pc
-    (fetchpatch {
-      url = "https://github.com/elementary/dock/commit/3bc368e2c4fafcd5b8baca2711c773b0e2441c7c.patch";
-      sha256 = "0gg35phi1cg7ixljc388i0h70w323r1gqzjhanccnsbjpqsgvs3k";
-    })
-  ];
 
   nativeBuildInputs = [
     gettext
@@ -75,6 +68,7 @@ stdenv.mkDerivation rec {
     libgee
     libwnck3
     pango
+    granite
   ];
 
   meta = with stdenv.lib; {

@@ -16,13 +16,13 @@
 
 stdenv.mkDerivation rec {
   pname = "pantheon-agent-geoclue2";
-  version = "1.0.4";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-LrDu9NczSKN9YLo922MqYbcHG1QAwzXUb7W0Q/g9ftI=";
+    rev = "0438229e7f2160357aaa67678841e01623f1af0a";
+    sha256 = "1ixhc5nqp1j5is2k6w05nffzj68c9as35hnjvvxh05z1aaxdd9sv";
   };
 
   passthru = {

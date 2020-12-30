@@ -21,27 +21,16 @@
 
 stdenv.mkDerivation rec {
   pname = "elementary-onboarding";
-  version = "1.2.1";
+  version = "2020-12-19";
 
   repoName = "onboarding";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-tLTwXA2miHqYqCUbIiBjb2nQB+uN/WzuE4F9m3fVCbM=";
+    rev = "0424d431de05784051f4fbc6d991effea2903341";
+    sha256 = "1hxwf5ks9rm1dzjdh3a9cnbs07akcl05d0ajx6ii4r9m9x3b7b0a";
   };
-
-  patches = [
-    # Port to Libhandy-1
-    (fetchpatch {
-      url = "https://github.com/elementary/onboarding/commit/8af6b7d9216f8cbf725f708b36ef4d4f6c400c78.patch";
-      sha256 = "cnSCSSFEQlNd9Ncw5VCJ32stZ8D4vhl3f+derAk/Cas=";
-      excludes = [
-        ".github/workflows/main.yml"
-      ];
-    })
-  ];
 
   passthru = {
     updateScript = nix-update-script {

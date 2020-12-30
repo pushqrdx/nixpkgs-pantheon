@@ -20,19 +20,20 @@
 , elementary-icon-theme
 , appstream
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-camera";
-  version = "1.0.6";
+  version = "2020-12-19";
 
   repoName = "camera";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-asl5NdSuLItXebxvqGlSEjwWhdButmka12YQAYkQT44=";
+    rev = "1af394264b2ce086a58b3f90706a62803cd22de8";
+    sha256 = "00ks8w80c1fwmjwfv6h21xcjvcvibjyyh0h68yss786xz1bmnwls";
   };
 
   passthru = {
@@ -66,6 +67,7 @@ stdenv.mkDerivation rec {
     gtk3
     libcanberra
     libgee
+    libhandy
   ];
 
   postPatch = ''

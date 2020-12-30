@@ -25,19 +25,20 @@
 , dbus
 , accountsservice
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-greeter";
-  version = "5.0.4";
+  version = "2020-12-19";
 
   repoName = "greeter";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-Enn+ekALWbk7FVJJuea/rNiwEZDIyb3kyMcZNNraOv8=";
+    rev = "9c3ca6a90487cf3a548aec3bdd8a0da84f918a18";
+    sha256 = "0ya7gxa86dqn9dcm3x1hvibd6g1xx13lpsg95kkia2c2wf3h9ibf";
   };
 
   passthru = {
@@ -73,6 +74,7 @@ stdenv.mkDerivation rec {
     lightdm
     mutter
     wingpanel-with-indicators
+    libhandy
   ];
 
   mesonFlags = [

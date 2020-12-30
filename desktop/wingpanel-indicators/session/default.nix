@@ -9,20 +9,20 @@
 , vala
 , gtk3
 , granite
-, wingpanel
 , accountsservice
 , libgee
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-session";
-  version = "unstable-2020-09-13";
+  version = "2020-12-19";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = "e65c95f46adbfd598ad61933394d7bc3c5998278";
-    sha256 = "sha256-QKOfgAc6pDQYpETrFunZB6+rF1P8XIf0pjft/t9aWW0=";
+    rev = "5e265b35e3bd646311311fb2cd06dd5753302dd7";
+    sha256 = "1hhmp2hxc85s2drmpn4m9iwwhn8w6sj2jkp9fqqjl6q22z2dnwqr";
   };
 
   passthru = {
@@ -43,7 +43,8 @@ stdenv.mkDerivation rec {
     granite
     gtk3
     libgee
-    wingpanel
+    libhandy
+    pantheon.wingpanel
   ];
 
   meta = with stdenv.lib; {

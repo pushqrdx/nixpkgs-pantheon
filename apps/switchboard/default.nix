@@ -14,17 +14,18 @@
 , clutter-gtk
 , elementary-icon-theme
 , wrapGAppsHook
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "switchboard";
-  version = "2.4.0";
+  version = "2020-12-18";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-N3WZysLIah40kcyIyhryZpm2FxCmlvp0EB1krZ/IsYs=";
+    rev = "e4299f16f02c03cd2180c0399ce5cfde4c3eca0a";
+    sha256 = "00f39l5m98gv81zr9p8l6i18dhq4vm80xmpwxvj18028d5l6g86d";
   };
 
   passthru = {
@@ -49,6 +50,7 @@ stdenv.mkDerivation rec {
     granite
     gtk3
     libgee
+    libhandy
   ];
 
   patches = [

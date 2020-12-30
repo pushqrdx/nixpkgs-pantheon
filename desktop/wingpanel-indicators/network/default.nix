@@ -10,19 +10,19 @@
 , granite
 , networkmanager
 , libnma
-, wingpanel
 , libgee
+, cmake
 }:
 
 stdenv.mkDerivation rec {
   pname = "wingpanel-indicator-network";
-  version = "2.2.4";
+  version = "2020-12-25";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = version;
-    sha256 = "sha256-wVHvHduUT55rIWRfRWg3Z3jL3FdzUJfiqFONRmpCR8k=";
+    rev = "f9b87d1d14c16f722c4ae1078b43e4b4f531b090";
+    sha256 = "1svq7fadh6vi18mzay6qspc81qnhfx2jr3prfxqfpkkgf8phvblf";
   };
 
   passthru = {
@@ -33,6 +33,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     meson
+    cmake
     ninja
     pkgconfig
     vala
@@ -44,7 +45,7 @@ stdenv.mkDerivation rec {
     libgee
     networkmanager
     libnma
-    wingpanel
+    pantheon.wingpanel
   ];
 
   meta = with stdenv.lib; {

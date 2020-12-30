@@ -15,19 +15,21 @@
 , elementary-gtk-theme
 , gettext
 , wrapGAppsHook
+, appstream
+, libhandy
 }:
 
 stdenv.mkDerivation rec {
   pname = "elementary-feedback";
-  version = "1.0";
+  version = "2020-12-19";
 
   repoName = "feedback";
 
   src = fetchFromGitHub {
     owner = "elementary";
     repo = repoName;
-    rev = version;
-    sha256 = "sha256-GkVnowqGXwnEgplT34Po/BKzC2F/IQE2kIw0SLSLhGU=";
+    rev = "b672739373c14e5a41d868cdb6cdcb4e1369ab74";
+    sha256 = "0zp055nfn5sx7sy4k658i30bkmcn1wx7bdbqw4x021qxlpgnxiv3";
   };
 
   passthru = {
@@ -53,6 +55,8 @@ stdenv.mkDerivation rec {
     elementary-gtk-theme
     libgee
     glib
+    appstream
+    libhandy
   ];
 
   postPatch = ''
