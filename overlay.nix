@@ -90,6 +90,8 @@ final: prev:
 
     pantheon-agent-polkit = pfinal.callPackage ./services/pantheon-agent-polkit { };
 
+    pantheon-settings-daemon = pfinal.callPackage ./services/pantheon-settings-daemon { };
+
     #### WINGPANEL INDICATORS
 
     wingpanel-applications-menu = pfinal.callPackage ./desktop/wingpanel-indicators/applications-menu { };
