@@ -27,13 +27,13 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "elementary";
     repo = pname;
-    rev = "26b024404d8fbaa6917cf832901293e4bc8b3970";
-    sha256 = "1c95bkw0q1h3k2gi925m05x6gq22yrl38hn9plhg1zzmjjw42002";
+    rev = "9d9eddeb7da8450a309496c25066f4f78a9d4070";
+    sha256 = "04wn9rj11wvl4qxc2mq8sfdy3zkbqvxzr0f22vrbbypgkqszkswa";
   };
 
-  patches = [
-    ./0001-Remove-Install-Unlisted-Engines-function.patch
-  ];
+  # patches = [
+  #   ./0001-Remove-Install-Unlisted-Engines-function.patch
+  # ];
 
   passthru = {
     updateScript = nix-update-script {
