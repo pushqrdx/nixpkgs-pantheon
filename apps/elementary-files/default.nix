@@ -84,9 +84,9 @@ stdenv.mkDerivation rec {
     systemd
   ];
 
-  #patches = [
-  #  ./0001-filechooser-module-hardcode-gsettings-for-nixos.patch
-  #];
+  mesonFlags = [
+    "-Dsystemduserunitdir='no'"
+  ];
 
   postPatch = ''
     chmod +x meson/post_install.py

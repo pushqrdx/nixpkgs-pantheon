@@ -18,8 +18,7 @@ final: prev:
 
     elementary-dock = pfinal.callPackage ./apps/elementary-dock { };
 
-    # FIXME
-    # elementary-files = pfinal.callPackage ./apps/elementary-files { };
+    elementary-files = pfinal.callPackage ./apps/elementary-files { };
 
     elementary-feedback = pfinal.callPackage ./apps/elementary-feedback { };
 
